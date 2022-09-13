@@ -1,4 +1,4 @@
-#include<iostream>
+п»ї#include<iostream>
 using namespace std;
 void FillRand(int arr[], const int n);
 void Print(int arr[], const int n);
@@ -13,21 +13,23 @@ void main()
 	int m = n / 2;
 	int* earr = new int[m];
 	int* oarr = new int[m];
-	//Не по заданию, разделение массива на четные и нечетные
+	//РќРµ РїРѕ Р·Р°РґР°РЅРёСЋ, СЂР°Р·РґРµР»РµРЅРёРµ РјР°СЃСЃРёРІР° РЅР° С‡РµС‚РЅС‹Рµ Рё РЅРµС‡РµС‚РЅС‹Рµ
 	for (int i = 0; i < n; i++)
 	{
 		(i % 2 == 0 ? earr[i / 2] = arr[i] : oarr[i / 2] = arr[i]);
 	}
-	cout << "Вывод двух производных массивов, разделенных по четным и нечетным индексам" << endl;
+	cout << "Р’С‹РІРѕРґ РґРІСѓС… РїСЂРѕРёР·РІРѕРґРЅС‹С… РјР°СЃСЃРёРІРѕРІ, СЂР°Р·РґРµР»РµРЅРЅС‹С… РїРѕ С‡РµС‚РЅС‹Рј Рё РЅРµС‡РµС‚РЅС‹Рј РёРЅРґРµРєСЃР°Рј" << endl;
 	Print(earr, m);
 	Print(oarr, m);
+	delete[]earr;
+	delete[]oarr;
 	cout << "_____________________________________________" << endl<<endl;
 	int odd=0, even=0;
 	for (int i = 0; i < n; i++)
 	{
 		(arr[i] % 2 == 0 ? even ++ : odd++);
 	}
-	cout << "Вывод двух производных массивов, разделенных на основании четности-нечетности значений" << endl;
+	cout << "Р’С‹РІРѕРґ РґРІСѓС… РїСЂРѕРёР·РІРѕРґРЅС‹С… РјР°СЃСЃРёРІРѕРІ, СЂР°Р·РґРµР»РµРЅРЅС‹С… РЅР° РѕСЃРЅРѕРІР°РЅРёРё С‡РµС‚РЅРѕСЃС‚Рё-РЅРµС‡РµС‚РЅРѕСЃС‚Рё Р·РЅР°С‡РµРЅРёР№" << endl;
 	cout << "even = " << even << "\t" << "odd = " << odd<< endl;
 	int* earr1 = new int[even];
 	int* oarr1 = new int[odd];
@@ -38,6 +40,8 @@ void main()
 	}
 	Print(earr1, even);
 	Print(oarr1, odd);
+	delete[]earr;
+	delete[]oarr;
 }
 
 void FillRand(int arr[], const int n)
