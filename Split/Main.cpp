@@ -40,8 +40,8 @@ void main()
 	}
 	Print(earr1, even);
 	Print(oarr1, odd);
-	delete[]earr;
-	delete[]oarr;
+	delete[]earr1;
+	delete[]oarr1;
 }
 
 void FillRand(int arr[], const int n)
