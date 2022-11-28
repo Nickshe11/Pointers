@@ -210,4 +210,4 @@ int* erase(int* arr, int& n, int index)
 	arr = buffer;
 	n--;
 	return arr;
-}
+} 
