@@ -6,15 +6,24 @@ using std::endl;
 
 void FillRand(int arr[], const int n);
 void FillRand(int** arr, const int rows, const int cols);
-void Print(int* arr, const int n);
-void Print(int** arr, const int rows, const int cols);
-int* push_back(int* arr, int& n, int value);
-int* push_front(int* arr, int& n, int value);
-int* insert(int* arr, int& n, int value, int index);
-int* pop_back(int* arr, int& n);
-int* pop_front(int* arr, int& n);
-int* erase(int* arr, int& n, int index);
 
+template<typename T> void Print(T* arr, const int n);
+template<typename T> void Print(T** arr, const int rows, const int cols);
+
+template <typename T>T* push_back(T* arr, int& n, int value);
+template <typename T>T* push_front(T* arr, int& n, int value);
+
+template<typename T>T** push_row_back(T** arr, int& rows, const int cols);
+template<typename T>T** pop_row_back(T** arr, int& rows, const int cols);
+
+template<typename T> void push_col_back(T** arr, const int rows, int& cols);
+template<typename T> void pop_col_back(T** arr, const int rows, int& cols);
+
+
+template <typename T>T* insert(T* arr, int& n, T value, int index);
+template <typename T>T* pop_back(T* arr, int& n);
+template <typename T>T* pop_front(T* arr, int& n);
+template <typename T>T* erase(T* arr, int& n, int index);
 //#define DYNAMIC_MEMORY_1
 #define DYNAMIC_MEMORY_2
 
