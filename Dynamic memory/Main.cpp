@@ -10,8 +10,8 @@ void FillRand(int** arr, const int rows, const int cols);
 template<typename T> void Print(T* arr, const int n);
 template<typename T> void Print(T** arr, const int rows, const int cols);
 
-template <typename T>T* push_back(T* arr, int& n, int value);
-template <typename T>T* push_front(T* arr, int& n, int value);
+template <typename T>T* push_back(T* arr, int& n, T value);
+template <typename T>T* push_front(T* arr, int& n, T value);
 
 template<typename T>T** push_row_back(T** arr, int& rows, const int cols);
 template<typename T>T** pop_row_back(T** arr, int& rows, const int cols);
@@ -103,7 +103,27 @@ void main()
 		delete[]arr[i];
 	}
 	delete[]arr;
-		
+	
+	int first = 0;
+	int second = 1;
+	int limit,box;
+	cout << "Укажите предельное значение для вывода ряда Фибоначчи:\t" << endl; cin >> limit;
+	for (; first <= limit; first=second, second += box)
+	{
+		cout << first << "\t";
+		box = first;
+	}
+	cout << endl;
+	first = 0;
+	second = 1;
+	cout << "введите количество выводимых значений:\t" << endl; cin >> limit;
+	for (int i = 0; i < limit; i++)
+	{
+		cout << first << "\t";
+		box = first;
+		first = second;
+		second += box;
+	}
 }
 
 void FillRand(int arr[], const int n)
@@ -175,7 +195,7 @@ template <typename T>T* push_back(T* arr, int& n, T value)
 	//7) Mission completed, element added
 	return arr;
 }
-template <typename T>T* push_front(T* arr, int& n, int value)
+template <typename T>T* push_front(T* arr, int& n, T value)
 {
 	int* buffer = new int[n + 1];
 	for (int i = 0; i <= n; i++)
